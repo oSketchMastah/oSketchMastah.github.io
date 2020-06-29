@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<!-- ******************************************************************** Head ********************************************************************** -->
+<head>
+	<title>PowerShell</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Import for using MathJax (for Latex Math) -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  	<script id="MathJax-script" async
+        	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	
+	<link rel="stylesheet" href="../../DefaultStyle.css">
+	<link rel="shortcut icon" href="../../../favicon.png">
+</head>
+<!-- ******************************************************************** Body ********************************************************************** -->
+<body>
+	<nav class="topnav">
+		<div class="navClassCont">
+			<a> Navigate </a>
+			<div class="dropTopNav">
+				<a href="../../MathInterface.html"> Mathematics </a>
+				<a href="../../CompSciInterface.html"> Computers and Programming </a>
+				<a href="../../LanguageInterface.html"> Language and Communications </a>
+				<a href="../../NatSciInterface.html"> Natural Sciences </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../MathInterface.html"> Math </a>
+			<div class="dropTopNav" id="dtn-math">
+				<a href="../../Math/Logic.html"> Logic and Proof </a>
+				<a href="../../Math/Algebras.html"> Algebras - Objects, Numbers, & Systems </a>
+				<a href="../../Math/Calculus.html"> Calculus - Advanced Structures </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../CompSciInterface.html"> CompSci </a>
+			<div class="dropTopNav" id="dtn-cs">
+				<a href="../../CompSci/LangLibInterface.html"> Programming Language Library </a>
+				<a href="../../CompSci/ConceptInterface.html"> Concepts and Vocabulary </a>
+				<a href="../../CompSci/HowToInterface.html"> Walkthroughs & How to's </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../LanguageInterface.html"> Language </a>
+			<div class="dropTopNav" id="dtn-lang">
+				<a href="../../Language/StandardsAbstractions.html"> Standards and Abstractions </a>
+				<a href="../../Language/LangLib.html"> Language Library </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../NatSciInterface.html"> Science </a>
+			<div class="dropTopNav" id="dtn-sci">
+				<a href="../../NatSci/MetaInterface.html"> Reasoning about Reasoning </a>
+				<a href="../../NatSci/PhysicsInterface.html"> Physics </a>
+				<a href="../../NatSci/ChemistryInterface.html"> Chemistry </a>
+				<a href="../../NatSci/BiologyInterface.html"> Biology </a>
+				<a href="../../NatSci/EngineeringInterface.html"> Engineering </a>
+			</div>
+		</div>
+   </nav>
+	<div class="main_title">
+	<h1> Windows PowerShell </h1>
+	</div>
+	<p> Powershell is a high-level command shell serving as a good alternative to CMD. This page is designed to teach you the powershell language
+		while helping you to better understand its capabilities. </p>
+<hr>
+	<h2> Fundamentals </h2> <ul>
+		<li> Output is <span id="keyword>object-based</span>: Everything is treated as an object</li>
+		<li> The command family is <span id="keyword>extensible</span>: Modules with additional cmdlets and providers can be created</li>
+		<li> Handles console input and display: No effort is exerted parsing arguments or formatting output.</li>
+		<li> Uses some C# syntax: PowerShell is built on the .NET framework and shares syntax features and keywords of C#</li>
+	</ul>
+	<h3> The Naming System </h3>
+	<p> PowerShell takes advantage of abstraction to create a relatively simple naming system </p> <ul> 
+		<li> Number of names reduced by abstracting conceptually similar operations on processes </li>
+		<li> <span id="keywrd">Cmdlets</span> use <span id="keywrd">Verb-Noun</span> formatted names</li>
+		<li> The hyphen '<span id="keywrd">-</span>' is the <span id="keywrd">standardized</span> parameter indicator.
+	</ul>
+	<p> <span id="fret">Get-Command</span> <span id="keywrd">-</span>{<span id="keywrd">Verb</span>, <span id="keywrd">Noun</span>} <span id="type">Specifier</span>:
+		can be used to find cmdlets in PowerShell, returns a list of all cmdlets using the specified noun/verb. <p>
+	<h3> Variables and cmdlets </h3>
+	<p> Variables are specified with form <span id="keywrd">$</span>identifier ; A <span id="keywrd">$</span> symbol followed by an identifer made up of letters and underscores.
+<br>	Values are <span id="keywrd">assigned</span> using the <span id="keywrd">=</span> operator followed by a value, having form: <ul>
+		<li> <span id="keywrd">$</span><span id="type">id</span> <span id="keywrd">=</span> <span id="type">value</span> </li>
+	</ul>
+	<span id="keywrd">Instantiate</span> variables using a dollar sign followed by an identifer and the assignment operator with set value. <ul>
+		<li> syntax:	<span id="keywrd">$</span>id <span id="keywrd">=</span> value </li>
+		<li> Possible types include strings, files, directories and arrays of these things specified using just commas between items. </li>
+	</ul>
+	<span id="keywrd">Pass</span> variables/values to cmdlets (that have the -inputObject switch) using the pipeline operator '|' (won't work otherwise) <ul> 
+		<li> <span id="keywrd">$</span>var <span id="keywrd">|</span> cmdlet </li>
+	</ul>
+
+<!-- *********************************************************************************************************************************************** -->
+	<h2> Files and IO </h2>
+	<p> Following are some switches available for many commands: </p><ul>
+	<li> <span id="keywrd">-Path</span> <span id="type">SourcePath</span> : Switch that specifies command to be performed on item specified as path by <span id="type">SourcePath</span>. </li>
+	<li> <span id="keywrd">-Destination</span> <span id="type">DestPath</span> : Switch that specifies path destination of output file/directory as <span id="type">DestPath</span>. </li>
+	<li> <span id="keywrd">-Recurse</span> : When command has a well-defined source folder (specified by -path), switches to recursively perform command on all
+		contained files and all sub-directories.</li>
+	<li> <span id="keywrd">-Filter</span> <span id="type">WcS</span> : Used with <span id="keywrd">-Recurse</span> switch to limit the files on which command is performed
+		to those satisfying the form given by the <span id="type">Wildcard Specifier</span> (<span id="type">WcS</span>)</li>
+	</ul>
+	<p> ** -path and -destination only need be specified to be unambiguous or for explicit specification of role of following path, which is <b>necessary</b> when 
+		going against the standard formatting for arguments shown 
+	<p> following are some functions for working with files, directories and IO 
+<br>	Creating File/Directory <br>
+	 <span id="feff"> New-item </span> <span id="keywrd">-ItemType</span> <span id="type">ItemType</span>: <span id="keywrd">Creates</span> an item with the specified type (File, Directory). Aliased w/ "ni".<ul>
+		<li> Used with -path</li>
+		</ul>
+	<span id="feff"> Copy-item </span> : Use for <span id="keywrd">copying</span> Files/Directories. Aliases include: copy, etc.<ul>
+		<li> Used with <span id="keywrd">-Path</span>, <span id="keywrd">-Destination</span>, <span id="keywrd">-Recurse</span>, <span id="keywrd">-Filter</span>. </li>
+		</ul>
+	<span id="feff"> Remove-item </span> : Use for <span id="keywrd">deleting</span> Files/Directories. Aliases include: erase, rm, ri, etc.<ul>
+		<li> Used with <span id="keywrd">-Path</span>, <span id="keywrd">-Recurse</span> </li>
+		</ul>
+	<span id="feff"> Move-item </span> : Use for <span id="keywrd">moving</span> Files/Directories. Aliases Include: move, mi, mv. <ul>
+		<li> Used with <span id="keywrd">-Path</span> (folder or directory), <span id="keywrd">-Destination</span> (directory). </li>
+	</ul>
+	<span id="feff"> Rename-item </span> : Use for <span id="keywrd">renaming</span> Files/Directories. Aliases Include: ren, rni <ul>
+		<li> Used with <span id="keywrd">-Path</span> (folder or directory), <span id="keywrd">-NewName</span> (directory). </li>
+	</ul>
+	<span id="fret"> Test-path </span> : Use to <span id="keywrd">check</span> if a folder/file exists. No aliases <ul>
+		<li> Used with <span id="keywrd">-Path</span>, <span id="keywrd">-Filter</span> </li>
+	</ul>
+	<span id="fret"> Get-content </span> : Use to <span id="keywrd">retrieve</span> the content of a file. Aliases are gc, cat, type. <ul>
+		<li> Used with <span id="keywrd">-Path</span> (file) </li>
+		<li> Accessible Members include: <span id="keywrd">length</span> </li>
+	</ul>
+	<span id="fret"> Set-content </span> : Use to <span id="keywrd">set</span> the content of a file. Aliased with "sc". <ul>
+		<li> Used with <span id="keywrd">-Path</span> (file), <span id="keywrd">-Value</span> (content), <span id="keywrd">-Filter</span>. </li>
+	</ul>
+	<span id="fret"> Clear-content </span> : Use to <span id="keywrd">clear</span> the content of a file. Aliased with "clc". <ul>
+		<li> Used with <span id="keywrd">-Path</span> (file), <span id="keywrd">-Filter</span>. </li>
+	</ul>
+	<span id="fret"> Add-content </span> : Use to <span id="keywrd">add</span> content as new line in a file. Aliased with "ac". <ul>
+		<li> Used with <span id="keywrd">-Path</span> (file), <span id="keywrd">-Value</span> (content), <span id="keywrd">-Filter</span>. </li>
+	</ul>
+	</p> 
+</body>
+<!-- *********************************************************************************************************************************************** -->
+</html>
