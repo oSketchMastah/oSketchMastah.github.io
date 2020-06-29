@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<!-- ******************************************************************** Head ********************************************************************** -->
+<head>
+	<title>HTML</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Import for using MathJax (for Latex Math) -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  	<script id="MathJax-script" async
+        	src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	
+	<link rel="stylesheet" href="../../DefaultStyle.css">
+	<link rel="shortcut icon" href="../../../favicon.png">
+</head>
+<!-- ******************************************************************** Body ********************************************************************** -->
+<body>
+	<nav class="topnav">
+		<div class="navClassCont">
+			<a> Navigate </a>
+			<div class="dropTopNav">
+				<a href="../../MathInterface.html"> Mathematics </a>
+				<a href="../../CompSciInterface.html"> Computers and Programming </a>
+				<a href="../../LanguageInterface.html"> Language and Communications </a>
+				<a href="../../NatSciInterface.html"> Natural Sciences </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../MathInterface.html"> Math </a>
+			<div class="dropTopNav" id="dtn-math">
+				<a href="../../Math/Logic.html"> Logic and Proof </a>
+				<a href="../../Math/Algebras.html"> Algebras - Objects, Numbers, & Systems </a>
+				<a href="../../Math/Calculus.html"> Calculus - Advanced Structures </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../CompSciInterface.html"> CompSci </a>
+			<div class="dropTopNav" id="dtn-cs">
+				<a href="../../CompSci/LangLibInterface.html"> Programming Language Library </a>
+				<a href="../../CompSci/ConceptInterface.html"> Concepts and Vocabulary </a>
+				<a href="../../CompSci/HowToInterface.html"> Walkthroughs & How to's </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../LanguageInterface.html"> Language </a>
+			<div class="dropTopNav" id="dtn-lang">
+				<a href="../../Language/StandardsAbstractions.html"> Standards and Abstractions </a>
+				<a href="../../Language/LangLib.html"> Language Library </a>
+			</div>
+		</div>
+		<div class="navClassCont"> 
+			<a href="../../NatSciInterface.html"> Science </a>
+			<div class="dropTopNav" id="dtn-sci">
+				<a href="../../NatSci/MetaInterface.html"> Reasoning about Reasoning </a>
+				<a href="../../NatSci/PhysicsInterface.html"> Physics </a>
+				<a href="../../NatSci/ChemistryInterface.html"> Chemistry </a>
+				<a href="../../NatSci/BiologyInterface.html"> Biology </a>
+				<a href="../../NatSci/EngineeringInterface.html"> Engineering </a>
+			</div>
+		</div>
+   </nav>
+	<div class="main_title">
+	<h1>HTML - Hyper-Text Markup Language</h1>
+	</div>
+	<h2>Language Structure</h2>
+	<p> Information is sorted in a hierarchy using tags of the form <span class="keywrd"><</span><span class="type">tag_id</span><span class="keywrd">></span> and <span class="keywrd"><</span><span class="keywrd">/</span><span class="type">tag_id</span><span class="keywrd">></span> where
+	<span class="type">tag_id</span> specifies the way to interpret and structure the given data (between the start and end tags). All tags have "attributes" that can be set, some tags and their attributes are:</p> 
+	<ul>    <li> <<span class="keywrd">html</span>> - defines scope of hyper-text document instructions </li>
+		<li> <<span class="keywrd">head</span>> - defines head of html document, used to specify meta-information, always specify between html and body start tags. Some <span class="keywrd">tags</span> defined in here are:
+		<ul>	<li> <<span class="keywrd">meta</span>>: used to give character-encoding, etc. </li>
+			<li> <<span class="keywrd">style</span>>: used to specify CSS styles internally, within the start and end tags </li>
+			<li> <<span class="keywrd">link</span>>: used to link an external file with function specified in <span class="keywrd">rel</span> attribute <ul> 
+				<li> <span class="keywrd">rel</span>: "stylesheet" - Styles (.css);</li>
+		</ul> 	</li>  </ul>	</li>
+		<li> <<span class="keywrd">body</span>> - defines main body of html document </li>
+		<li> <<span class="keywrd">h1</span>>, <<span class="keywrd">h2</span>>, ... <<span class="keywrd">h6</span>> specifies a heading, where number gives rank </li>
+		<li> <<span class="keywrd">p</span>> defines a paragraph </li>
+		<li> <<span class="keywrd">ul</span>> and <<span class="keywrd">ol</span>> specify unordered (dot bulleted), and ordered (number bulleted) lists
+			<ul> 
+				<li> <<span class="keywrd">li</span>> specifies a bulleted point of text </li>
+			</ul>
+		</li>
+		<li> <<span class="keywrd">a</span>> specifies text that acts as a "link"
+			<ul>
+				<li> the attribute <span class="keywrd">href</span> is set equal to the string URL to define the link </li>
+			</ul>
+		</li>
+		<li> <<span class="keywrd">img</span>> specifies an image using solely attributes (no end tag) 
+			<ul>
+				<li> attributes: <span class="keywrd">src</span> = image file, <span class="keywrd">alt</span> = alt text, <span class="keywrd">width</span>, <span class="keywrd">height</span> = pixel dimension (string) </li>
+			</ul>
+		</li>
+		<li> <<span class="keywrd">button</span>> specifies a clickable button with overlying text </li>
+	</ul>
+	<!-- ****************************************************** CSS **************************************************************** -->
+	<h2> Styling and CSS </h2>
+	<p> Cascading Style sheets (CSS) is the language and interface through which we specify stylistic properties of a webpage. Although script can be used to specify dynamic styles, it often shares many
+		keywords with CSS to perserve simplicity.</p>
+	<!-- ****************************************************** DOM/JS **************************************************************** -->
+	<h2> Document Object Model (DOM) and Dynamic HTML with JavaScript </h2>
+	<p> Browsers construct a DOM when a webpage is loaded as a tree of objects. Tree is contructed with elements as nodes, html element as root node, and subtrees created for each "block" within an element.
+	<br> With the DOM, everything about a webpage can be changed using <span class="keywrd">JavaScript</span>. </p>
+	<h3> DOM Methods and Properties </h3>
+	<p> Methods and Properties of an object are accessed using the dot operator '.', an object in a list/tuple of objects can be accessed with the array indexing operator [index]. 
+	Attributes are properties of element objects.</p>
+	<h4> Navigating Elements (using document Object)</h4> <ul>
+		<li> <span class="fret">getElementById(<span class="type">id</span>)</span>: returns first element object with specified id</li>
+		<li> <span class="fret">getElementsByTagName(<span class="type">name</span>)</span>: returns tuple of chronologically ordered elements with specified tagname</li>
+		<li> <span class="fret">getElementsByClassName(<span class="type">name</span>)</span>: returns tuple of chronologically ordered elements with specified class name</li>
+		<li> <span class="feff">createElement(<span class="type">element</span>)</span>: creates a new HTML element </li>
+		<li> <span class="feff">removeChild(<span class="type">element</span>)</span>: removes the specified HTML element </li>
+		<li> <span class="feff">appendChild(<span class="type">element</span>)</span>: adds an HTML element. </li>
+		<li> <span class="feff">replaceChild(<span class="type">newElement</span>, <span class="type">oldElement</span>)</span>: replaces an HTML element </li>
+		<li> <span class="feff">write(<span class="type">text</span>)</span>: writes the text to HTML output stream </li>
+	</ul>
+
+
+</body>
+<!-- *********************************************************************************************************************************************** -->
+</html>
