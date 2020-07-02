@@ -103,18 +103,18 @@ img {
 .topnav .navClassCont .dropTopNav {
 	display: none;
 	border: solid 0.1vw;
-	border-color: grey;
+	border-color: #111111;
 	position: fixed;
 	background-color: #902000;
 	top: 48px;
-	width: 19.8%;
+	width: 20%;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	padding: 0;
 }
 .topnav .navClassCont .dropTopNav a {
 	float: none;
 	border: solid 0.1vw;
-	border-color: grey;
+	border-color: #111111;
 	display: none;
 	width: 100%;
 	overflow: hidden;
