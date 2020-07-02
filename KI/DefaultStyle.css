@@ -1,0 +1,144 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	color: green;
+	background-color: black;
+	font-family: arial;
+	font-size: 150%;
+	margin: 0;
+}
+
+table {
+	width: 100%;
+}
+table, th, td {
+	border: 2px solid white;	
+}
+
+th, td {
+	padding: 6px;
+}
+table.staff tr {
+	height: 40vh;
+}
+table.staff td {
+	height: 40vh;
+	width: 50%;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+.link { 
+	background-color: rgb(200, 130, 0);
+	font-size: 160%;
+	margin: 20px;
+	border: 5px Solid White; 
+	padding: 30px;
+	
+}
+
+.main_title {
+	background-color: rgb(100, 0, 100);
+	color: rgb(255, 100, 0);
+	font-size: 2.0vw;
+	padding: 20px; 
+}
+
+.keywrd {
+	color: rgb(150, 100, 0);
+}
+
+.type {
+	color: rgb(255, 0, 0);
+}
+
+.varic {
+	color: rgb(255, 0, 200);
+}
+
+.feff {
+	color: rgb(255, 255, 0);
+}
+
+.fret {
+	color: #999999;
+}
+
+.topnav {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 1.2vw;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: #403080;
+	width: 100vw;
+	height: 6vh;
+}
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 0px;
+	text-decoration: none;
+	font-size: inherit;
+	height: 6vh;
+	width: 20vw;
+}
+.topnav .navClassCont {
+	left: inherit;
+	background-color: #902000;
+}
+.topnav .navClassCont:hover {
+	background-color: #902000;
+}
+.topnav .navClassCont:hover a {
+	background-color: #902000;
+}
+.topnav .navClassCont .dropTopNav {
+	display: none;
+	border: solid 0.1vw;
+	border-color: #111111;
+	position: fixed;
+	background-color: #902000;
+	top: 6vh;
+	width: 20vw;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0;
+}
+.topnav .navClassCont .dropTopNav a {
+	float: none;
+	border: solid 0.1vw;
+	border-color: #111111;
+	display: none;
+	width: 20vw;
+	overflow: hidden;
+	position: sticky;
+}
+#dtn-math {
+	left: 20vw;
+}
+#dtn-cs {
+	left: 40vw;
+}
+#dtn-lang {
+	left: 60vw;
+}
+#dtn-sci {
+	left: 80vw;
+}
+.topnav .navClassCont:hover a:hover {
+	background-color: #D04000;
+}
+.topnav .navClassCont:hover .dropTopNav {
+	display: block;
+}
+.topnav .navClassCont:hover .dropTopNav a {
+	display: block;
+}
