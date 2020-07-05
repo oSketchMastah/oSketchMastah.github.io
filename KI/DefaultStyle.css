@@ -1,0 +1,150 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	color: green;
+	background-color: black;
+	font-family: arial;
+	font-size: calc(9px + 1.5vw);
+	margin: 0;
+}
+table {
+	width: 100%;
+}
+table, th, td {
+	border: 2px solid white;	
+}
+
+th, td {
+	padding: 6px;
+}
+table.staff tr {
+	height: 40vh;
+}
+table.staff td {
+	height: 40vh;
+	width: 50%;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 100%;
+	max-width: 100%;
+}
+.link { 
+	background-color: rgb(200, 130, 0);
+	font-size: 160%;
+	margin: 20px;
+	border: 5px Solid White; 
+	padding: 30px;
+	
+}
+
+.main_title {
+	background-color: rgb(100, 0, 100);
+	color: rgb(255, 100, 0);
+	font-size: 3.0vw;
+	padding: 20px; 
+}
+
+.keywrd {
+	color: rgb(150, 100, 0);
+}
+
+.type {
+	color: rgb(255, 0, 0);
+}
+
+.varic {
+	color: rgb(255, 0, 200);
+}
+
+.feff {
+	color: rgb(255, 255, 0);
+}
+
+.fret {
+	color: #999999;
+}
+
+:root {
+	--nav-height: calc(10px + 2vh + 3.2vw);
+}
+
+.topnav {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: #403080;
+	width: 100%;
+	height: var(--nav-height);
+}
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
+	text-decoration: none;
+	font-size: 3.2vw;
+	height: var(--nav-height);
+	vertical-align:  middle;
+	width: 20%;
+}
+.topnav .navClassCont {
+	left: inherit;
+	background-color: #902000;
+}
+.topnav .navClassCont:hover {
+	background-color: #902000;
+}
+.topnav .navClassCont:hover a {
+	background-color: #902000;
+}
+.topnav .navClassCont .dropTopNav {
+	display: none;
+	border: solid 0.1vw;
+	border-color: #111111;
+	position: fixed;
+	background-color: #902000;
+	top: var(--nav-height);
+	width: 20%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 0;
+}
+.topnav .navClassCont .dropTopNav a {
+	float: none;
+	border: solid 0.1vw;
+	border-color: #111111;
+	display: none;
+	font-size: 2.0vw;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+	position: sticky;
+}
+#dtn-math {
+	left: 20%;
+}
+#dtn-cs {
+	left: 40%;
+}
+#dtn-lang {
+	left: 60%;
+}
+#dtn-sci {
+	left: 80%;
+}
+.topnav .navClassCont:hover a:hover {
+	background-color: #D04000;
+}
+.topnav .navClassCont:hover .dropTopNav {
+	display: block;
+}
+.topnav .navClassCont:hover .dropTopNav a {
+	display: block;
+}
