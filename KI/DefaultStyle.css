@@ -5,10 +5,9 @@ body {
 	color: green;
 	background-color: black;
 	font-family: arial;
-	font-size: calc(12px + 1.5vw);
+	font-size: calc(9px + 1.5vw);
 	margin: 0;
 }
-
 table {
 	width: 100%;
 }
@@ -45,7 +44,7 @@ img {
 .main_title {
 	background-color: rgb(100, 0, 100);
 	color: rgb(255, 100, 0);
-	font-size: 2.0vw;
+	font-size: 3.0vw;
 	padding: 20px; 
 }
 
@@ -69,6 +68,10 @@ img {
 	color: #999999;
 }
 
+:root {
+	--nav-height: calc(20px + 4vh);
+}
+
 .topnav {
 	margin: 0;
 	padding: 0;
@@ -77,19 +80,20 @@ img {
 	top: 0;
 	left: 0;
 	background-color: #403080;
-	width: 100vw;
-	height: calc(6px + 6vh);
+	width: 100%;
+	height: var(--nav-height);
 }
 .topnav a {
 	float: left;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 0px 14px;
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
 	text-decoration: none;
-	font-size: calc(20px + 2.4 vw);
-	height: calc(6px + 6vh);
+	font-size: 4vw;
+	height: var(--nav-height);
 	vertical-align:  middle;
-	width: 20vw;
+	width: 20%;
 }
 .topnav .navClassCont {
 	left: inherit;
@@ -107,8 +111,8 @@ img {
 	border-color: #111111;
 	position: fixed;
 	background-color: #902000;
-	top: calc(6px + 6vh);
-	width: 20vw;
+	top: var(--nav-height);
+	width: 20%;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	padding: 0;
 }
@@ -117,23 +121,23 @@ img {
 	border: solid 0.1vw;
 	border-color: #111111;
 	display: none;
-	font-size: calc(12px + 1.2vw);
+	font-size: calc(5px + 1.4vw);
 	height: auto;
-	width: 20vw;
+	width: 100%;
 	overflow: hidden;
 	position: sticky;
 }
 #dtn-math {
-	left: 20vw;
+	left: 20%;
 }
 #dtn-cs {
-	left: 40vw;
+	left: 40%;
 }
 #dtn-lang {
-	left: 60vw;
+	left: 60%;
 }
 #dtn-sci {
-	left: 80vw;
+	left: 80%;
 }
 .topnav .navClassCont:hover a:hover {
 	background-color: #D04000;
