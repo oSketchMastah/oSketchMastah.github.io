@@ -69,7 +69,7 @@ img {
 }
 
 :root {
-	--nav-height: calc(10px + 2vh + 3.2vw);
+	--nav-height: calc(10px + 2vh + 3.6vw);
 }
 
 .topnav {
@@ -90,7 +90,7 @@ img {
 	padding-top: 1.5vh;
 	padding-bottom: 1.5vh;
 	text-decoration: none;
-	font-size: 3.2vw;
+	font-size: 3.6vw;
 	height: var(--nav-height);
 	vertical-align:  middle;
 	width: 20%;
@@ -121,7 +121,7 @@ img {
 	border: solid 0.1vw;
 	border-color: #111111;
 	display: none;
-	font-size: 2.0vw;
+	font-size: 2.3vw;
 	height: auto;
 	width: 100%;
 	overflow: hidden;
