@@ -54,11 +54,11 @@
 		<div class="navClassCont"> 
 			<a href="../../NatSciInterface.html"> Science </a>
 			<div class="dropTopNav" id="dtn-sci">
-				<a href="../../NatSci/MetaKnowledge/MetaInterface.html"> Reasoning about Reasoning </a>
-				<a href="../../NatSci/PhysicsLibrary/PhysicsInterface.html"> Physics </a>
-				<a href="../../NatSci/ChemistryLibrary/ChemistryInterface.html"> Chemistry </a>
-				<a href="../../NatSci/BiologyLibrary/BiologyInterface.html"> Biology </a>
-				<a href="../../NatSci/EngineeringLibrary/EngineeringInterface.html"> Engineering </a>
+				<a href="../../NatSci/MetaInterface.html"> Reasoning about Reasoning </a>
+				<a href="../../NatSci/PhysicsInterface.html"> Physics </a>
+				<a href="../../NatSci/ChemistryInterface.html"> Chemistry </a>
+				<a href="../../NatSci/BiologyInterface.html"> Biology </a>
+				<a href="../../NatSci/EngineeringInterface.html"> Engineering </a>
 			</div>
 		</div>
    </nav>
@@ -68,7 +68,7 @@
 	<p> The goal here is to distill a sense of the nature of mathematical reasoning through a direct analysis of the reasoning process. Through this analysis,
 		much will be covered. You can expect to know the following by the end: </p> <ul>
 			<li> Construction of Truth-value Statements and their Semiotics</li>
-			<li> Understanding usage of relationship between Semantics and Syntax for proof and construction </li>
+			<li> Understanding usage of relationship between Semantics and Syntax for proof and construction (<i>explored further in other chapters</i>)</li>
 			<li> Many principles for the pursuit of further knowledge </li>
 	</ul>
 <hr><hr>
@@ -76,33 +76,35 @@
 			that have been established since the times of Aristotle. There were three laws that were taken as presumptions, or things that must hold, in the structure
 			of any valid argument. These 3 laws were as follows: </p><ul>
 			<li><span class="keywrd">Law of Non-Contradiction</span>: This law states that no valid argument can imply a contradiction, a contradiction occurs 
-				when a statement is implied to be both true and false. </li>
-			<li><span class="keywrd">Law of the Excluded Middle</span>: This law states that any statement must be either true or false, there is no in-between. Personally, 
-				I find this isn't always true, as a statement may be indeterminate within the confines of ones system of axioms. However this can generally be proven or disproven 
+				when a statement is implied to be both true and false. Put simply, it cannot be necessary for any statement to be both true and false based on ones <b>axioms</b></li>
+			<li><span class="keywrd">Law of the Excluded Middle</span>: This law states that any statement must be either true or false, there is no in-between. However, this was a law
+				derived by observing straight-forward arguments, and since then we have found this isn't always true, as a statement may be indeterminate given what we know. However this can generally be proven or disproven 
 				in any particular case, and given determinacy, it seems this law then always holds and can thus be used in the deductive process. </li>
-			<li><span class="keywrd">Law of Identity</span>: This law states that any thing or property that truly is cannot be something that is 
-					not identical to itself in the given context. If a specific property can be one of an arbitrary number of possible instances, then it can 
-					only show itself as one of those instances at any point in time. </li> 
-	</ul>
-	
-	
-	<h2> Statements - Objects of Reasoning </h2>
-	<p> In Mathematics, it is common to work on understanding a system (such as the reasoning process), by first identifying the objects of the system, and then
-		identifying structure between these objects. To define structure between objects is to define how they relate, and how they can interact to create 
-		other objects. With that being said, we will study the art of effective reasoning by considering statements as mathematical objects, and considering
-		how statements relate in terms of their truth. </p>
-	<p> <span style="font-family: Engravers MT"> Def<sup>N</sup> </span>: <span id="keywrd"> Truth-value </span> <br> <ul>
-		<li> One of either <span id="keywrd">true</span> or <span id="keywrd">false</span>, gives the only two possible states for the value of a well-defined statement. </li>
-	</ul> </p>
-	<p>Choosing how to define a term can be tricky, the goal is to pick a definition that directly addresses the semantics of the defined term, and can easily be used
-		to prove or disprove that an arbitrary external object satisfies the defined term. Before coming up with a formal definition, it is often good to put
-		considerable thought into the definition beforehand. We also want something simple and easy to remember. Keeping these in mind we might come up with
-		our first definition of a statement</p>
-	<p> <span style="font-family: Engravers MT"> Def<sup>N</sup> </span>: <span id="type"> Statement </span> <br> <ul>
-		<li> A sentence with a well-defined truth value </li>
-	</ul></p>
-	<p> This is a simple definition that uses terms that are already defined, and in essence says that statements are sentences that make a claim about some object, or objects.</p>
-	<p> It is important to understand that a statement claims something to be true, its truth-value depends on whether the underlying claim is indeed true.</p>
+			<li><span class="keywrd">Law of Identity</span>: This law states that any thing or property must be identical to itself, in other words, any valid argument should not suggest
+				that something is not something else which is not perceptually identical to itself in the context that it is uttered.</li>
+	</ul> 
+	<p>There are some understandings of the terms I have used in my description of these laws that will come in handy:<br>
+		Ones <span class="keywrd">Axioms</span> are all of the statements that are assumed, deemed, or imposed to be true for the purpose of deducing further information.
+		Mathematicians take axioms very seriously, and for good reason. The best <span class="keywrd">Arguments</span> are in the form of an implication or series
+		of implications. For example, if someone asks, "Why is <b>A</b> the same as <b>C</b>":<br>
+		<pre>	</pre> the worst response - no reasoning given: "Because, <b>A</b> the same as <b>C</b>"<br>
+		<pre>   </pre> a (variably) better response: "Because, <b>A</b> the same as <b>B</b>, and <b>B</b> the same as <b>C</b>, which means that <b>A</b> the same as <b>C</b>"<br>
+		<pre>   	</pre> This form of explanation works best when ones axioms make it clear why <b>A</b> is identical to <b>B</b>, and why it to <b>C</b>. It also assumes the understanding
+				that <a href="https://en.wikipedia.org/wiki/Equivalence_relation">equivalence</a> is a transitive relation. </a> <br>
+		This applies to <b>understanding</b> the same way it applies to arguing or explaining. If you start off by understanding and refining your <i>axioms</i>, and can be sure of their
+			applicability and truth, you can use these with an understanding of <i>logic</i> to derive facts that are (must be) true based on the truth of your axioms. You can then use
+			logic with these newly derived truths to deduce further truth. By practicing this, you will enhance your sense of <span class="keywrd">causal structure</span>, and be better
+			able to critically and objectively analyze the world around you.</p>
+	<p>It is good, initially, to understand logic as a collection of information that serves as a tool for rationally deriving factual statements based on groups
+		of other statements that are believed to be factual. In boolean logic, the description of a statements truth (called its <span class="keywrd">truth-value</span>),
+		can take on one of two values, <b>true</b> or <b>false</b>. Using the two-valued description of truth-value that is used in boolean logic is useful when dealing
+		with statements that are causally related. When some degree of stochasticity is involved, a more suitable description might be that of <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">Fuzzy logic</a>,
+		which uses the ideas of fuzzification of precise measures (for example, summarizing a numerical temperature with a term like "warm", which is a <i>fuzzy term</i>), and 
+		defuzzification of fuzzy measures (taking a fuzzy term, and coming up with an approximate numerical measure)
+		
+	</p>
+	<h2>Logical Operators</h2>
+	<hr> <!--CopyPasta from here on out-->
 	<h3> Semiotics and Structure between Statements </h3>
 	<p> In Mathematics, the use of symbols instead of words to communicate often complex statements is just one behavior adopted as a means of increasing productivity.
 		Roughly speaking, if you replace an 8 letter word with a single symbol (meaning the symbol carries the same meaning as the word), you've reduced the 
