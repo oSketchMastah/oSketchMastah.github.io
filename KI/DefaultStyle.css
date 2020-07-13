@@ -48,6 +48,9 @@ img {
 	padding: 20px; 
 }
 
+p.indent {
+	margin-left: 5vw;
+}
 .keywrd {
 	color: rgb(150, 100, 0);
 }
