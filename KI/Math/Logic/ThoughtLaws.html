@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <!-- ******************************************************************** Head ********************************************************************** -->
 <head>
 	<!-- Set a Title -->
@@ -86,22 +86,45 @@
 	<p>There are some understandings of the terms I have used in my description of these laws that will come in handy:<br>
 		Ones <span class="keywrd">Axioms</span> are all of the statements that are assumed, deemed, or imposed to be true for the purpose of deducing further information.
 		Mathematicians take axioms very seriously, and for good reason. The best <span class="keywrd">Arguments</span> are in the form of an implication or series
-		of implications. For example, if someone asks, "Why is <b>A</b> the same as <b>C</b>":<br>
-		<pre>	</pre> the worst response - no reasoning given: "Because, <b>A</b> the same as <b>C</b>"<br>
-		<pre>   </pre> a (variably) better response: "Because, <b>A</b> the same as <b>B</b>, and <b>B</b> the same as <b>C</b>, which means that <b>A</b> the same as <b>C</b>"<br>
-		<pre>   	</pre> This form of explanation works best when ones axioms make it clear why <b>A</b> is identical to <b>B</b>, and why it to <b>C</b>. It also assumes the understanding
-				that <a href="https://en.wikipedia.org/wiki/Equivalence_relation">equivalence</a> is a transitive relation. </a> <br>
-		This applies to <b>understanding</b> the same way it applies to arguing or explaining. If you start off by understanding and refining your <i>axioms</i>, and can be sure of their
+		of implications. For example, if someone asks, "Why is <b>A</b> (some mathematical object) the same as <b>C</b> (other mathematical object)":</p>
+		<p class="indent"> the worst response - no reasoning given: "Because, <b>A</b> is the same as <b>C</b>"</p>
+		<p class="indent"> a (variably) better response: "Because, <b>A</b> is the same as <b>B</b>, and <b>B</b> is the same as <b>C</b>, which means that <b>A</b> is also the same as <b>C</b>" <ul>
+			<li>  	This form of explanation works best when ones axioms make it clear why <b>A</b> is identical or <i>'same'</i> to <b>B</b>, and why it to <b>C</b>. It also assumes the understanding
+				that <a href="https://en.wikipedia.org/wiki/Equivalence_relation">equivalence</a> is a transitive relation. </li> </ul> 
+		</p>
+		<p> This applies to <b>understanding</b> the same way it applies to arguing or explaining. If you start off by understanding and refining your <i>axioms</i>, and can be sure of their
 			applicability and truth, you can use these with an understanding of <i>logic</i> to derive facts that are (must be) true based on the truth of your axioms. You can then use
 			logic with these newly derived truths to deduce further truth. By practicing this, you will enhance your sense of <span class="keywrd">causal structure</span>, and be better
 			able to critically and objectively analyze the world around you.</p>
 	<p>It is good, initially, to understand logic as a collection of information that serves as a tool for rationally deriving factual statements based on groups
 		of other statements that are believed to be factual. In boolean logic, the description of a statements truth (called its <span class="keywrd">truth-value</span>),
-		can take on one of two values, <b>true</b> or <b>false</b>. Using the two-valued description of truth-value that is used in boolean logic is useful when dealing
-		with statements that are causally related. When some degree of stochasticity is involved, a more suitable description might be that of <a href="https://en.wikipedia.org/wiki/Fuzzy_logic">Fuzzy logic</a>,
-		which uses the ideas of fuzzification of precise measures (for example, summarizing a numerical temperature with a term like "warm", which is a <i>fuzzy term</i>), and 
-		defuzzification of fuzzy measures (taking a fuzzy term, and coming up with an approximate numerical measure)
-		
+		can take on one of two values, <b>true</b> or <b>false</b>. The two-valued description of truth-value that is used in boolean logic is useful when dealing
+		with statements that are well-defined, as to not introduce the concept of 'partial truth'. A statement may have a 'degree of truth', which is described as
+		a value between 0 (undeniably false) and 1 (undeniably true), such statements arise when people use terms that introduce ambiguity, or even when one wishes to
+		directly deal with, or analyze the effects of variabilities in ignorance and interpretation within a system. The logic using such 
+		partial truth is called <i><a href="https://en.wikipedia.org/wiki/Fuzzy_logic">fuzzy logic</a></i>.<br>
+	fuzzy logic is a relatively new thing to math, having only been conceived in the 20th century. The vast majority of mathematical truth
+		was discovered using boolean logic, making it a reasonable thing for us to consider learning first.</p>
+	<h2>Statements</h2>
+	<p>Statements in general make a 'claim' about some 'object'. The claim says something about the state of this object, whether it be 
+			an absolute description of the state, or one described in relation to another object. Statements also have a truth-value, the overall statement
+			can either be true or false, and it is the conduct of logic to determine what or if statements are true or false, as well as in what contexts the 
+			relevant statements truth-value holds.</p>
+	<p>Logic is tricky, there is no singular mechanism by which any and all statements get their truth value. One good distinction is
+		that between imposed and derivably true statements. We can impose truths by defining what things mean, for example, "bird" means
+		bird (the warm-blooded, egg-laying, vertebrates with feathers, wings, and a beak) because we say it does, it has its meaning because we agreed on it, 
+		and wrote it in a dictionary. In this sense, a bird is a bird because we say it's a bird. On the other hand, there's also derived truth like "some birds can fly", which could
+		be <i>seen</i> and taken as stand-alone fact, or other-wise shown to be true as a result of the wing structure of some birds combined with physical law enabling the action flight. </p>
+	</p>
+	<p>
+		The bird example <i>might</i> seem irrelevent to mathematical logic, but I assure you that logic works the same regardless of where it is used.
+		The same way we can define what it means to be a bird, we could also define what it means to be some sort of mathematical object. The same way we determine 
+		that a feature or property of many birds is flight, we could determine features and properties of a mathematical object. <br>	
+		Of course, I have been simplifying things up until now. The nature of how we impose truth is not always to define what it means to be something. <i>Definition</i>
+		is only a part of it. We can also <i>Interpret</i> one thing as another, which is what we do when we use symbols to semantically represent some value or property, although
+		this is made possible because we can define how symbols interact with one another however we want. Another <i>type</i> of interpretation can happen when two objects of 
+		a different form have the same properties, which allows us to use the two forms in talking about one object interchangeably, the most famous example of this would be 
+		linear operations and transformation matrices.
 	</p>
 	<h2>Logical Operators</h2>
 	<hr> <!--CopyPasta from here on out-->
@@ -185,10 +208,6 @@
 	This definition is chosen because it's a great definition, not only can we show it equivalent to the truth-table definition, 
 	but it shows you can prove material equivalence of two statements by simply proving that both statements are implied by eachother, which is often much easier. 
 <br>	</p>
-	
-	<h3> Links </h3>
-	<div class="link"> 
-	</div>
 </body>
 <!-- *********************************************************************************************************************************************** -->
 </html>
