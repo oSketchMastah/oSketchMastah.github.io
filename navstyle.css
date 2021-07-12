@@ -1,0 +1,140 @@
+:root {
+	--bgc-main: #000000;
+	--bgc-nav: #2f00ff;
+	--bgc-title: rgb(0, 47, 255);
+	--bgc-active: #902000 ;
+	--bgc-target: #D04000 ;
+	--text-color: green ;
+	--nav-total: 2;
+	--nav-height: calc(40px + 1.0vw);
+	--big-text: calc(10px + 1.0vw);
+	--little-text: calc(10px + 0.6vw);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--bgc-main);
+	font-family: "Lucida Console", monospace;
+	font-size: var(--little-text);
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	width: 100%;
+}
+table, th, td {
+	border: 2px solid white;	
+}
+
+th, td {
+	padding: 6px;
+}
+table.staff tr {
+	height: 40vh;
+}
+table.staff td {
+	height: 40vh;
+	width: 50%;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	max-width: auto;
+}
+
+.main_title {
+	background-color: var(--bgc-title);
+	color: var(--text-color);
+	font-size: var(--big-text);
+	padding: 20px; 
+}
+
+p.indent {
+	margin-left: 5vw;
+}
+.keywrd {
+	color: rgb(150, 100, 0);
+}
+
+.type {
+	color: rgb(255, 0, 0);
+}
+
+.topnav {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--bgc-nav);
+	width: 100%;
+	height: var(--nav-height);
+}
+
+.topnav .navClassCont * {
+	float: left;
+	height: var(--nav-height);
+	width: calc(100%/var(--nav-total));
+	margin: 0;
+	
+	vertical-align: middle;
+	padding-top: 1.5vh;
+	padding-bottom: 1.5vh;
+	
+	text-align: center;
+	text-decoration: none;
+	font-size: var(--big-text);
+	color: white;
+
+}
+/*
+.topnav .navClassCont {
+	left: inherit;
+	background-color: var(--bgc-active);
+}*/
+
+.topnav .navClassCont:hover * {
+	background-color: var(--bgc-active);
+}
+
+.topnav .navClassCont .dropTopNav {
+	display: none;
+	border: solid 0.1vw;
+	border-color: var(--bgc-main);
+	position: fixed;
+	background-color: var(--bgc-active);
+	top: var(--nav-height);
+	
+	padding: 0;
+}
+
+.topnav .navClassCont .dropTopNav * {
+
+	border: solid 0.1vw;
+	border-color: var(--bgc-main);
+	display: none;
+	font-size: 2.3vw;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+	position: sticky;
+}
+.topnav .navClassCont a:hover {
+	background-color: var(--bgc-target);
+}
+.navClassCont:hover .dropTopNav {
+	display: block;
+}
+.navClassCont:hover .dropTopNav * {
+	display: block;
+}
+
+
