@@ -11,64 +11,6 @@
 	--little-text: calc(10px + 0.5vw);
 }
 
-* {
-	box-sizing: border-box;
-}
-
-body {
-	color: var(--text-color);
-	background-color: var(--bgc-main);
-	font-family: "Lucida Console", monospace;
-	font-size: var(--little-text);
-	margin: 0;
-	padding: 0;
-}
-
-table {
-	width: 100%;
-}
-table, th, td {
-	border: 2px solid white;	
-}
-
-th, td {
-	padding: 6px;
-}
-table.staff tr {
-	height: 40vh;
-}
-table.staff td {
-	height: 40vh;
-	width: 50%;
-}
-img {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	height: 100%;
-	max-width: auto;
-}
-
-.main_title {
-	border: solid 0.4vh;
-	border-color: var(--color-text);
-	background-color: var(--bgc-main);
-	color: var(--color-text);
-	font-size: var(--big-text);
-	padding: 10px; 
-}
-
-p.indent {
-	margin-left: 5vw;
-}
-.keywrd {
-	color: rgb(150, 100, 0);
-}
-
-.type {
-	color: rgb(255, 0, 0);
-}
-
 .topnav {
 	margin: 0;
 	padding: 0;
@@ -99,11 +41,6 @@ p.indent {
 	color: white;
 
 }
-/*
-.topnav .navClassCont {
-	left: inherit;
-	background-color: var(--bgc-active);
-}*/
 
 .topnav .navClassCont:hover * {
 	background-color: var(--bgc-active);

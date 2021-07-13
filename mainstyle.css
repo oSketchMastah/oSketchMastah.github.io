@@ -1,0 +1,66 @@
+:root {
+	--bgc-main: #000000;
+	--bgc-nav: #8000ff;
+	--bgc-title: rgb(0, 47, 255);
+	--bgc-active: #902000 ;
+	--bgc-target: #D04000 ;
+	--text-color: green ;
+	--nav-total: 2;
+	--nav-height: calc(40px + 1.0vw);
+	--big-text: calc(10px + 0.7vw);
+	--little-text: calc(10px + 0.5vw);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--text-color);
+	background-color: var(--bgc-main);
+	font-family: "Lucida Console", monospace;
+	font-size: var(--little-text);
+	margin: 0;
+	padding: 0;
+}
+
+.main_title {
+	border: solid 0.4vh;
+	border-color: var(--color-text);
+	background-color: var(--bgc-main);
+	color: var(--color-text);
+	font-size: var(--big-text);
+	padding: 10px; 
+}
+
+
+
+table {
+	width: 100%;
+}
+table, th, td {
+	border: 2px solid white;	
+}
+
+th, td {
+	padding: 6px;
+}
+table.staff tr {
+	height: 40vh;
+}
+table.staff td {
+	height: 40vh;
+	width: 50%;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	max-width: auto;
+}
+
+p.indent {
+	margin-left: 5vw;
+}
+
