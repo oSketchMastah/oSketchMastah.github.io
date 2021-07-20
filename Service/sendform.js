@@ -5,7 +5,7 @@ function SendForm() {
 var req = new XMLHttpRequest();
 document.forms.publish.onsubmit = function() {
 if (this.message.value.length < 2) { return; }
-req.open("POST", "http://mainintelligence:9003/", true);
+req.open("POST", "http://mainintelligence.org:9003/", true);
 req.send(this.message.value);
 let msgdiv = document.createElement('div');
 msgdiv.style.cssText = 'left: 0;';
