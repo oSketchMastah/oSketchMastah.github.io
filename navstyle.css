@@ -32,7 +32,7 @@
 	margin: 0;
 	
 	vertical-align: middle;
-	padding-top: 1.5vh;
+	padding-top: calc(var(--nav-height)/ 4);
 	padding-bottom: 1.5vh;
 	
 	text-align: center;
@@ -50,6 +50,7 @@
 	display: none;
 	position: fixed;
 	background-color: var(--bgc-active);
+	height: auto;
 	top: var(--nav-height);
 	padding: 0;
 }
@@ -68,10 +69,11 @@
 .topnav .navClassCont a:hover {
 	background-color: var(--bgc-target);
 }
+
 .navClassCont:hover .dropTopNav {
 	display: block;
 }
-.navClassCont:hover .dropTopNav * {
+.topnav .navClassCont:hover .dropTopNav * {
 	display: block;
 }
 

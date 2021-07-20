@@ -4,6 +4,7 @@
 	--bgc-title: rgb(0, 47, 255);
 	--bgc-active: #902000 ;
 	--bgc-target: #D04000 ;
+	--bgc-box: #002869;
 	--text-color: green ;
 	--nav-total: 2;
 	--nav-height: calc(40px + 1.0vw);
@@ -33,7 +34,13 @@ body {
 	padding: 10px; 
 }
 
-
+.Box {
+	margin: 10px;
+	padding: 7px;
+	background-color: var(--bgc-box);
+	color: white;
+	border: solid 0.4vh;
+}
 
 table {
 	width: 100%;

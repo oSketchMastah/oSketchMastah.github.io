@@ -2,50 +2,75 @@
 <html lang="en">
 <!-- ******************************************************************** Head ********************************************************************** -->
 <head>
-	<title>MainIntelligence.org</title>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Code Stuff">
-	<meta name="keywords" content="programming, open, source, code, mainintelligence, docs">
-	<meta property="og:title" content="MainIntelligence.org - C++ Code for the masses">
-	<meta property="og:type" content="website">
-	<!-- <meta property="og:image" content="ProjectFreeKnowledge.png"> -->
-	<meta property="og:url" content="https://www.mainintelligence.org">
-	<link rel="stylesheet" href="navstyle.css">
-	<link rel="stylesheet" href="mainstyle.css">
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+<title>MainIntelligence.org</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Code Stuff">
+<meta name="keywords" content="programming, open, source, code, mainintelligence, docs">
+<meta property="og:title" content="MainIntelligence.org - C++ Code for the masses">
+<meta property="og:type" content="website">
+<!-- <meta property="og:image" content="ProjectFreeKnowledge.png"> -->
+<meta property="og:url" content="https://www.mainintelligence.org">
+<link rel="stylesheet" href="navstyle.css">
+<link rel="stylesheet" href="mainstyle.css">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 <!-- ******************************************************************** Body ********************************************************************** -->
 <body>
-	<nav class="topnav"> 
-		<div class="navClassCont">
-			<p> Navigate </p>
-			<div class="dropTopNav">
-				<a href="Docs/Docs.html"> Documentation </a>
-				<a href="Docs/NPMC.html"> Mathematical Cleverness </a>
-			</div>
-		</div>
-		<div class="navClassCont">
-			<a href="https://www.mainintelligence.org/"> Home </a>
-		</div>
-   	</nav>
-	<div class="main_title">
-	<h1>MainIntelligence</h1>
-	</div>
-	<p> Hello frens! </p>
-	<p> MainIntelligence is an organization that deals in writing performance-centric code. Much of which is open-sourced at <a href="https://github.com/MainIntelligence">
-		github.com/MainIntelligence</a> </p>
-	<p> This website should serve the purposes of:
-		<li>1. Providing documentation for MainIntelligence code and APIs. </li>
-		<li>2. Giving a place for live testing of server code. </li>
-		<li>3. (Maybe) Providing a couple services to the public.</li>
+<nav class="topnav"> 
+<div class="navClassCont">
+<p> Navigate </p>
+<div class="dropTopNav">
+<a href="Docs/Docs.html"> Documentation </a>
+<a href="Docs/NPMC.html"> Mathematical Cleverness </a>
+<a href="Service/Services.html"> Services </a>
+</div>
+</div>
+<div class="navClassCont" style="left: 50vw;">
+<a href="https://www.mainintelligence.org/"> Home </a>
+</div>
+</nav>
+
+<div class="main_title">
+<h1>MainIntelligence</h1>
+</div>
+<p> Hello frens! </p>
+<p> MainIntelligence is an organization that deals in writing performance-centric code. Much of which is open-sourced at <a href="https://github.com/MainIntelligence">
+github.com/MainIntelligence</a> 
+</p>
+<p> This website should serve the purposes of:
+	<li>1. Providing documentation for MainIntelligence code and APIs. </li>
+	<li>2. Giving a place for live testing of server code. </li>
+	<li>3. (Maybe) Providing a couple services to the public.</li>
+</p>
+<button class="Box" style="background-color: white"><a href="http://mainintelligence.org:9002/">Click to send respek</a></button>
+<div class="Box">
+<p style="color: red"> Important: <span style="color: var(--text-color)"> (for users of MI services) </span></p> <p>
+	I'll be honest, I write all the server code myself,
+	and have dealt with enough hostile internet bots to the point where I've decided 
+	to take an aggressive defensive policy against bad requests and port scanners.
+	So, to improve the quality of traffic over time, the server is programmed to
+	act as a kind of honeypot program, detecting port scanners and obvious attempts
+	at exploitation. The point is, <span style="color: red"> There will be permanent 
+	bans issued without warning </span> If you address the server by IP in a host header,
+	or forget to use a host header in the HTTP request. (ie. use a decent browser/client program)
+	There are other various aspects of the request that are tested, and for which you could
+	be banned (as long as you navigate MI services using this web interface, or MI provided
+	stuff, you are definitely ok). I won't detail too much, but basically if I think you're
+	doing stuff that I don't approve of, it's banworthy.
+	
+	<p> You can tell if you were banned if I send a 403 Forbidden response to your
+	HTTP request (this happens the moment the server bans you). From that point on,
+	the server will see your IP prior to reading your request and immediately drop the connection.
+	(To you, it will look like the server no longer exists)</p>
+	
+	<p> Please get a hold of me if you think the server made a mistake in banning you. 
+		If you are using a cloud provider, I may eventually unban you on my own accord.
+		(or not! it depends on the general reputation of your provider and their client-base)
 	</p>
-	<div style="margin:10px">
-	<button><a href="http://mainintelligence.org:9002/">Click to send thank</a></button>
-	<p> Spam it if you want me to finish the blacklist ;) ... in all seriousness though, if I'm online then my
-		computer beeps when you press it, please don't do anything crazy. 
-		(setting up a thanks script to constantly bombard me is a nono)</p>
-	</div>
+
+	</p>
+</div>
 <hr>
 	<h2> People of MI </h2>
 	<p> </p>
