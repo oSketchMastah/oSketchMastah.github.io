@@ -1,14 +1,13 @@
 :root {
-	--bgc-main: #000000;
-	--bgc-nav: #8000ff;
-	--bgc-title: rgb(0, 47, 255);
-	--bgc-active: #902000 ;
-	--bgc-target: #D04000 ;
-	--text-color: green ;
+	--color-navbg: #8000ff;
+	--color-navtxt: #ffffff;
+	--color-activebg: #902000;
+	--color-activetxt: #ffffff;
+	--color-targetbg: #D04000;
+	--color-targettxt: #ffffff;
+	
 	--nav-total: 2;
 	--nav-height: calc(40px + 1.0vw);
-	--big-text: calc(10px + 0.7vw);
-	--little-text: calc(10px + 0.5vw);
 }
 
 .topnav {
@@ -18,13 +17,14 @@
 	position: sticky;
 	top: 0;
 	left: 0;
-	background-color: var(--bgc-nav);
+	background-color: var(--color-navbg);
 	width: 100%;
 	height: var(--nav-height);
 
 }
 
 .topnav .navClassCont * {
+	color: var(--color-navtxt);
 	border: solid 0.1vw black;
 	float: left;
 	height: var(--nav-height);
@@ -38,18 +38,17 @@
 	text-align: center;
 	text-decoration: none;
 	font-size: var(--big-text);
-	color: white;
-
 }
 
 .topnav .navClassCont:hover * {
-	background-color: var(--bgc-active);
+	color: var(--color-activetxt);
+	background-color: var(--color-activebg);
 }
 
 .topnav .navClassCont .dropTopNav {
 	display: none;
 	position: fixed;
-	background-color: var(--bgc-active);
+	background-color: var(--color-activebg);
 	height: auto;
 	top: var(--nav-height);
 	padding: 0;
@@ -58,7 +57,7 @@
 .topnav .navClassCont .dropTopNav * {
 
 	border: solid 0.1vw;
-	border-color: var(--bgc-main);
+	border-color: var(--color-mbg);
 	display: none;
 	font-size: 2.3vw;
 	height: auto;
@@ -67,7 +66,8 @@
 	position: sticky;
 }
 .topnav .navClassCont a:hover {
-	background-color: var(--bgc-target);
+	color: var(--color-targettxt);
+	background-color: var(--color-targetbg);
 }
 
 .navClassCont:hover .dropTopNav {

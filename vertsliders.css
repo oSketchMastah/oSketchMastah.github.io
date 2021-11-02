@@ -1,0 +1,23 @@
+:root {
+  --color-chosen: #808080;
+}
+
+#color-box {
+ background-color: var(--color-chosen);
+}
+
+.vertical-slider {
+  display: inline-block;
+  width: calc(10px + 1vw);
+  height: 20vh;
+  padding: 0;
+  float: left;
+}
+
+.vertical-slider input {
+  width: 20vh;
+  height: 20px;
+  margin: 0;
+ transform-origin: 10vh 10vh;
+ transform: rotate(-90deg);
+}

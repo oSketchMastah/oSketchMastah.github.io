@@ -1,13 +1,9 @@
 :root {
-	--bgc-main: #000000;
-	--bgc-nav: #8000ff;
-	--bgc-title: rgb(0, 47, 255);
-	--bgc-active: #902000 ;
-	--bgc-target: #D04000 ;
-	--bgc-box: #002869;
-	--text-color: green ;
-	--nav-total: 2;
-	--nav-height: calc(40px + 1.0vw);
+	--color-mbg: #000000;
+	--color-mtxt: #008000;
+	--color-boxbg: #002869;
+	--color-boxtxt: #ffffff;
+	
 	--big-text: calc(10px + 0.7vw);
 	--little-text: calc(10px + 0.5vw);
 }
@@ -17,8 +13,8 @@
 }
 
 body {
-	color: var(--text-color);
-	background-color: var(--bgc-main);
+	color: var(--color-mtxt);
+	background-color: var(--color-mbg);
 	font-family: "Lucida Console", monospace;
 	font-size: var(--little-text);
 	margin: 0;
@@ -27,8 +23,8 @@ body {
 
 .main_title {
 	border: solid 0.4vh;
-	border-color: var(--color-text);
-	background-color: var(--bgc-main);
+	border-color: var(--color-mtxt);
+	background-color: var(--color-mbg);
 	color: var(--color-text);
 	font-size: var(--big-text);
 	padding: 10px; 
@@ -37,15 +33,15 @@ body {
 .Box {
 	margin: 10px;
 	padding: 7px;
-	background-color: var(--bgc-box);
-	color: white;
+	background-color: var(--color-boxbg);
+	color: var(--color-boxtxt);
 	border: solid 0.4vh;
 }
 
-table {
+table.staff {
 	width: 100%;
 }
-table, th, td {
+table.staff th, table.staff td {
 	border: 2px solid white;	
 }
 
@@ -64,7 +60,6 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	height: 100%;
-	max-width: auto;
 }
 
 p.indent {
