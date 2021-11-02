@@ -13,9 +13,10 @@ if ((id & 1) == 0) {
 
 var hexc = localStorage.colors;
 if (hexc) {
+	let root = document.querySelector(':root').style;
 	for (let i = 0; i < 10; i++) {
 		let cssvar= GetVar(i);
-		this.root.setProperty(cssvar, '#' + hexc.substring(0, 6));
+		root.setProperty(cssvar, '#' + hexc.substring(0, 6));
 		hexc = hexc.substring(6);
 	}
 }
