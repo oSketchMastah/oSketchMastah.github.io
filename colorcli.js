@@ -12,13 +12,10 @@ if ((id & 1) == 0) {
 }
 
 var hexc = localStorage.colors;
-console.log("yeet");
 if (hexc) {
-	console.log("yert");
-	let hexvs = this.colorstr;
 	for (let i = 0; i < 10; i++) {
 		let cssvar= GetVar(i);
-		this.root.setProperty(cssvar, '#' + hexvs.substring(0, 6));
-		hexvs = hexvs.substring(6);
+		this.root.setProperty(cssvar, '#' + hexc.substring(0, 6));
+		hexc = hexc.substring(6);
 	}
 }
