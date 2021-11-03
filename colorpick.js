@@ -27,7 +27,7 @@ this.projs = Array();
 this.input = Array();
 let rz = document.body;
 rz = rz.querySelector('#colorarea');
-let vsto = rz.children[1];
+let vsto = rz.children[2];
 const sliderz = rz.querySelector('div');
 const wraps = sliderz.children;
 for (let i=0; i<4; i++) {
@@ -44,7 +44,7 @@ this.vnodes[3] = vsto.children[3];
 this.vs[3] = Math.pow(2, (this.input[3]).value);
 this.vnodes[3].innerHTML = this.vs[3].toString(10);
 
-vsto = rz.children[2];
+vsto = rz.children[4];
 
 this.hexcode = "";
 for (let i=0; i<3; i++) {
@@ -105,7 +105,7 @@ HandleBrightnessChange(v) {
   this.vs[3] = Math.pow(2, v);
   v = this.vs[3];
   
-  this.vnodes[3].innerHTML = v.toString(10);
+  this.vnodes[3].innerHTML = v.toFixed(3).toString(10);
   
   this.hexcode = "";
   for(let i=0; i<3; i++) {

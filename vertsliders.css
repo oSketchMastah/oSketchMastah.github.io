@@ -4,11 +4,12 @@
 
 #color-box {
  background-color: var(--color-chosen);
+ width: 25vw;
 }
 
 .vertical-slider {
   display: inline-block;
-  width: calc(10px + 1vw);
+  width: 12.5vw;
   height: 20vh;
   padding: 0;
   float: left;
