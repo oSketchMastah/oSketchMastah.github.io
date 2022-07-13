@@ -15,7 +15,7 @@
 body {
 	color: var(--color-mtxt);
 	background-color: var(--color-mbg);
-	font-family: "Lucida Console", monospace;
+	font-family: "Courier New", monospace;
 	font-size: var(--little-text);
 	margin: 0;
 	padding: 0;
@@ -36,6 +36,7 @@ body {
 	background-color: var(--color-boxbg);
 	color: var(--color-boxtxt);
 	border: solid 0.4vh;
+	overflow-wrap: break-word;
 }
 
 table.staff {

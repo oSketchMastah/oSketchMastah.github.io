@@ -20,7 +20,7 @@
 	background-color: var(--color-navbg);
 	width: 100%;
 	height: var(--nav-height);
-
+	z-index: 1;
 }
 
 .topnav .navClassCont * {
