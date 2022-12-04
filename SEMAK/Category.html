@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ******************************************************************** Head ********************************************************************** -->
+<head>
+<title>Categories</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SEMAK theory portal">
+<meta name="keywords" content="SEMAK, theory, tutorial">
+<meta property="og:title" content="SEMAK theory portal">
+<meta property="og:type" content="website">
+<meta property="og:image" content="favicon.ico">
+<!--meta property="og:url" content="https://mainintelligence.org"-->
+<script type="text/javascript" src="/common.js"></script>
+<script type="text/javascript" src="/load-mathjax.js"></script>
+</head>
+
+<nav class="topnav"> 
+<div class="navClassCont">
+<p> Navigate </p>
+<div class="dropTopNav">
+<p> Nowhere to go! </p>
+</div>
+</div>
+<div class="navClassCont" style="left: 50vw;">
+<a href="https://mainintelligence.org/"> Home </a>
+</div>
+</nav>
+
+<body>
+<div class="main_title"><h1>Categories</h1></div>
+<p>The idea of categories is to make a super-structure where as much information as possible is implicit in the structure (deduced using what is specified, rather than explicitly specified). In SEMAK, we want a structure that can incorporate <b>any</b> information into the system in a very usable and efficient way. With that, there is the point that we need to implement some things in C++ either to make certain functionality accessible or to make it happen super fast. Imagine something like doing a fourier transform on a sound signal with some pattern matching on the major frequencies over time to try and form symbols at a small level and a kind of "story" of events at the higher level, all while informing the more cognizant and delegative part of the system when something important enough occurs. Forming a symbol at the small level can mean any way we find to represent noteworthy information as a part of the story or a message to the more cognitive part of the system. Two microphones pointing in opposite directions can give a pretty good sense of where an audio source is, there might be a symbol that goes into the story when a sensory (acoustic in this example) thread detects an audio source with some sort of weird property (maybe it sounded like it came from an unexpected location, or doesn't match up with any known sound patterns, or something has moved somewhere, any number of things really). Maybe we want these parts of the system to communicate based on all having access to the same categorical information, that way a sensory system could specify a story almost like code, it could give a code to represent adding a new entity into the story, then it could algorithmically specify the details (like category, instance data, etc.).
+</p>
+<p>The possibilities are endless anyways, especially since I plan to put the source code out so that people can tweak and extend the system as they please. If you remember that part of my rant about AIs hopping into systems running on different hardware, then maybe you've already got a sense about how categorization makes that feasible (even when people extend their system). You can categorize things like interfaces implemented in C++, sub-categorize that into things like system call, or general device related interfaces and information. There might be things somewhere in the category of 'Physics', maybe in the sub-category of 'Models', or some 'Algorithm' sub-category that get used to make device drivers dynamically (like knowing the details of how to specify the right PWM duty cycle in order to get a servo motor to be at a certain position). All of this is information that a computer-jumping sentient robot may want to consider when packing its bags for another host system. Having hardware interfaces (or information very specific to them) is a matter of physical capabilities that can be controlled, and means nothing (except maybe as a kind of communicable experience) on another system, whereas things like intent and other information can be worthwhile things to send over.
+</p>
+<p>Ultimately, there should be primitive categories and compositions of them into bigger and deeper things. By having separate command interfaces, we can keep our instructions small. By categorizing these interfaces, we've come up with a categorization that has special meaning to the processor (it knows to use a specific call mechanisms, which is probably different from the one implemented in the execution engine).</p>
+<h2>Primitive Categories, Their Identification and Processing</h2>
+<p>
+To introduce this concept, we'll consider an example of a primitive category. Consider something like a "Boolean Composition", not that it's conceptually primitive, it could be thought of as an instance of the notion of a "Bitwise composition", for example. But it's about what we implement in C++ to save space and time, rather than making our notion of primitive match conceptual standards of primitivity. We might even have a way to specify the condition for our "Bitwise configuration" to be able to be categorized more specifically as a "Boolean configuration" (the bitwise entities in sequence are homogeneous and 1-bit apart), perhaps we want this optimization to happen automatically as we make structures (call it dynamic optimization). The other thing is that homogeneity affects bitwise entity compositions the same way it affects byte-wise compositions (the entity offset calculation becomes a linear function, rather than storing offset sequences and doing a lookup), so there's kind of a 2x2 matrix of possible categories defined over the homogeneity status and the "bit or byte entity" status. The entity type status defines whether offset/size calculations measure in bits or bytes, while the homogeneity status tells us whether we define the binary format using a size per element (in case of homogeneity) or a sequence of offsets (each provides quick random access, as long as you have hardware multipliers for the homogeneity case). Let the paradigm shift sink in, we've went from: <ol>
+  <li>Thinking of a homogeneous single-bit composition as an instance of bitwise composition (where offsets in the sequence would indicate entities are all 1 bit in size) </li>
+  <li>Thinking of homogeneity as defining the information we use and how we use it to calculate an address, and imagining entity type status as having the orthogonal effect (procedurally) of making this address have meaning at the bit or byte level.</li>
+</ol>
+In the first case, we're thinking of it this way because bitwise compositions are more general in the sense that they have data that is proportional to the number of entities, so there is more degrees of freedom in what can be represented (the data for homogeneous structures is basically constant as entities grow, there is less freedom). For every homogeneous composition, there is a simple way of representing that using a general bitwise composition (but not the other way around). </p>
+<p>In the second paradigm, we see what primitive means in the processor, orthogonal/independent things that get associated with their unique processor functions and combine to form a final accumulated interpretation. We need two bits of information, the one for homogeneity tells us something about how to interpret the rest of the categories information, the one for bit/byte mode tells us how to get and set the value for an indexed entity from some data identified by a memory location (which depends on whether addressing is based on bits or bytes).
+</p>
+<p>
+We use the idea of states when we talk about representing things, 1 bit is needed to represent homogeneity (homogeneous = 1, heterogeneous = 0), same for bit/byte mode. Any combination of heterogeneity and bit/byte mode together is valid, so there are 4 possible states of things (2 bits worth). <b>This is what happens when we need one state AND another state</b> in our final sequence of data, we put the string of bits needed to represent each state in sequence, one string of bits after the other. <b>What if we need one state OR another state?</b> In this case, we use a string representing a different number for each potential state (the final state is one or the other, not a combination of them together). 
+</p>
+<p>There's information about how we represent the category, and information for how we get computation-ready binary representations out of instance memory, all packed into a sequence of bits and put right at the start of a category definition since its format depends on the information encoded in the binary string (which will be useful when we start embedding category definitions in memory or a file structure). Let's get formal, we want a way of representing or implying the state in the category definition, and how its interface is used. We want it to scale well, for 64 possible states, it would be ideal if we deterministically decomposed that into 6 binary sub-states, and potential 6 procedural changes (one for each sub-state), rather than writing out 64 unique (and large) procedural changes for interpreting the category and its instances, which would be a mistake if we could factor out a few conceptual changes and represent those as substates in the final representation. So formally we want to define a representation for categorical interpretation (R) of the form:
+<p class="Box" style="text-align:center;">$R = S_0 | S_1 | ... | S_K$</p>
+Where '|' represents the binary concatenation operator, and each substate $S_0,..,S_K$ is being concatenated in a way that I'll describe. We can say:
+<p class="Box" style="text-align:center;">
+$ \forall i \in \mathbb{N}[0, K], \exists M \in \mathbb{N} : S_i \in \mathbb{N}[0, 2^{m}) $
+</p>
+In other words, we can assign $M$ bits to each substate, knowing it can be represented within these bits ($M$ bits can represent any unsigned number from $0$ to $2^{M} - 1$). We would like each substate to be allocated a personal length of bits because this will make it computationally easy to decode from $R$. We can define a function $L$ such that $L : S_i \in \mathbb{N}[0, 2^{M_i} - 1] \Rightarrow M_i$. Let $R[m,n]$ represent the number you get when you go to the bit at index $m$ in $R$, and take $n$ bits starting at the location $m$.
+<p class="Box" style="text-align:center;">
+$(R = S_i | S_j) \iff (R[0, L(S_i)] = S_i$ and $R[L(S_i), L(S_j)] = S_j)$
+</p>
+Basically $R$ is made by starting with the bits of $S_i$, then continuing with the bits of $S_j$. Notice this operation ($f : (S_i, S_j) \Rightarrow S_i|S_j$) is associative, non-commutative, and conditionally invertible provided we know $L(S_i)$ and $L(S_j)$ (in order to know $f : S_i|S_j \Rightarrow S_i$ and $g : S_i|S_j \Rightarrow S_j$).
+</p>
+<p>So, referring back to the equation:
+<p class="Box" style="text-align:center;">$R = S_0 | S_1 | ... | S_K$</p>
+We want to maximize the number of distinct groups of procedural modes, identified as substates $S_0,.., S_K$, essentially we want to optimize the ratio of $K$ to the average of $L(S_i)$ over $i \in \mathbb{N}[0, K]$. Practically, consider when $L(S) = 1$, we have two possible implementations to choose from (and that we have to implement), when $L(S) = 2$ we have four implementations (to write and potentially use), $L(S) = 3$ gives 8 implementations. The amount of work per substate is proportional to the number of potential states that the substate has. So we want our substates to usually be binary (this or that) since this is when $Work / Avg(L(S))$ is minimized, but <b>the golden rule is that if they cannot both be composed at the same time, then combine them into the same substate</b>, rather than making them a part of different substates.
+</p>
+<p>What we've covered here is the basis of category definitions and what we want to implement in C++. Besides the mechanisms covered, we could also talk about using contexts to partition classes of objects by what substates are used in its representation code. Our binary concatenation mechanism combines groups of substates $\{S_{0i}\}$,..,$\{S_{Ui}\}$ in a way that can be semantically represented as:
+<p class="Box" style="text-align:center;">
+($S_{00}$ OR ... OR $S_{0N}$) AND ... AND ($S_{U0}$ OR ... OR $S_{UM}$)
+</p>
+<p>
+When a class of things can be described with this pattern, we tend to do exactly that. What cannot or should not be described with this pattern? Let us consider a kind of antithesis pattern. Let $\mathbb{P}$ represent the class of all things that can be described with this pattern, let $P_0$,..,$P_N$ $\in \mathbb{P}$. Consider the expression:
+<p class="Box" style="text-align:center;">
+$P_0$ OR ... OR $P_N$ $= POR\{P_i\} = POR\{ PAND\{POR\{S_{ij}\}\} \}$
+</p>
+There may be shared substates between any two values $P_i$ and $P_j$ (represented as $S_i = POR\{S_{ij}\}$)
+</p>
+<p>
+There is a sense in which $P_i$ and $P_j$ can have common factors. We can find the largest possible $C \in \mathbb{P}$ such that $P = C$ AND $S$ for both $P = P_i$ and $P = P_j$, each sharing $C$ while having their unique $S \in \mathbb{P}$ (they share the same C value but have their own unique substates as well). Let $P_i = C$ AND $S_i$,and let P_j have the same form (note that we could define this expression for $S_i \in \mathbb{P}$, and the result would be the same). We can write:
+<p class="Box" style="text-align:center;">
+ ($P_i$ OR $P_j$) = ($C$ AND $S_i$) OR ($C$ AND $S_j$) = $C$ AND ($S_i$ OR $S_j$)
+</p>
+This is a hint towards how we deal with categories with primitives that don't neatly fit a specific $S \in \mathbb{P}$. Here's some options that work with our formula:<ul>
+<li>Have a categorical context that decides the common part $C$ of $P_i$ and $P_j$, have a unique derived category for every different ending (some might be other contexts with their own shared part and sub-categories).</li>
+<li>Allocate a bit sequence with the $C$ value, Allocate what you need to hold the sum number of states over $S_i$ and $S_j$, use an invertible function to map the sequences into their shared space. For instance, if $S_i$ and $S_j$ have $N_i$ and $N_j$ states, and $S_i[k]$ represents the $k$-th state in $S_i$, then we could use the function:
+<p class="Box" style="text-align:center;">
+$f(k) = \left\{
+\begin{array}{ll}
+      S_i[k] & k\le N_i \\
+      S_j[k - N_i] & N_i <= k < N_i + N_j
+\end{array}
+\right.$
+</p>
+This works because given $k$ because we know which state in $S_i$ or $S_j$ this corresponds to, provided we know at least $N_i$
+</li>
+
+</ul>
+</p>
+
+<!-- <p>There's only so much space on memory or a hard drive, so if it is to hold the secret sauce of life effectively, we must learn to be practically stingy. I joke only in part, because this might be such a darn good model that it ends up being half the whole system. 
+Imagine a database, for each entry there are properties, and the values for any property tend to be highly repeated across entries - How do we minimize the data cost of this repetition? We could define a way that a single binary number (identifying a very specific category) associates to whatever data we collected or the categorizations given to that data. Simply put, we categorize things, then our database (somehow) knows these properties as implicit characteristics of the entry, we've removed all data repetition, only at the cost incurred by adding the structure for the category. Some points about categories:<ul>
+<li>It can define things about its instances (insert basic inheritance talk here)</li>
+<hr>
+<li>It might leave things that its instances need to "fill in" (insert polymorphism and variable rant here) to complete a pattern (with variables or methods), which means sub-categories need less code to get more functionality.</li>
+<hr>
+<li>It can provide an algorithm for reducing information (like reducing eye colour data into a characterization like "blue")</li>
+<hr>
+<li>It can help localize a lot of information that you need together - especially beneficial when you consider the idea of having one big hash to map strings to their categorical concept (you only need to identify the category for a correct hash algorithm, and the string name and everything else about the category can be found in one place. </li>
+<hr>
+<li>If the process manages to provide access to instances through their category, then the instances need not be paired with a category identifier (maybe an instruction triggering "change of context" into the category, somehow, we already knew, it just becomes a question of which instance)</li>
+<hr>
+<li>We can define our bytecode around traversing categories and using information in the category definition within general algorithms.</li>
+<hr>
+<li>Categories have all the relations that Sets have, and as such, someones categorical understanding of the world can be depicted as a graph on a 2D manifold, made by representing the categories as 2D regions with various set relations and boundary conditions that respect categorical meaning. Of course this only represents ontological relations, what something is, what it isn't, whether the line between two different things is really a line or more like a valley (that sort of thing).</li>
+</ul>
+Before I get into what the implementation of this looks like in the SEMAK system, I'll just point out what role categories play in SEMAK. Abstractly, categories are doing a few things: <ul>
+<li>Managing and dynamically providing an interface to a hierarchy of knowledge and information (representations, models, and all)</li>
+<li>Giving a basis for efficient OOP and allowing execution to work within the information of the systems defined categories (object types can be implicit in execution to save space, we can use categorical scope to multiplex instructions from lots of different categories into 8-bit instruction space)</li>
+</ul>
+I did mention that this projects whole purpose is to make AI easier. By coupling knowledge with execution, it makes it easier to do things like issue general voice commands and have that translate right into code getting executed, or questions getting asked (and maybe answered for the system to deterministically improve its knowledge of the world), which involves sub-sequences of sound data getting mapped to string words (by far the biggest issue that remains), which are getting mapped to categories, which ultimately map to code.
+</p> -->
+</body></html>

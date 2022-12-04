@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ******************************************************************** Head ********************************************************************** -->
+<head>
+<title> Representation </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Representations and Binary">
+<meta name="keywords" content="SEMAK, theory, tutorial">
+<meta property="og:title" content="SEMAK theory portal">
+<meta property="og:type" content="website">
+<meta property="og:image" content="favicon.ico">
+<!--meta property="og:url" content="https://mainintelligence.org"-->
+<link rel="stylesheet" href="/nav.css">
+<link rel="stylesheet" href="/main.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<nav class="topnav"> 
+<div class="navClassCont">
+<p> Navigate </p>
+<div class="dropTopNav">
+<p> Nowhere to go! </p>
+</div>
+</div>
+<div class="navClassCont" style="left: 50vw;">
+<a href="https://mainintelligence.org/"> Home </a>
+</div>
+</nav>
+
+<body>
+<div class="main_title"><h1>How Representation Works - How SEMAK represents</h1></div>
+<p>Let's get right down to it. Representation is about two things:<ol>
+<li>Assigning symbols to concepts</li>
+<li>Composing primitive concepts (and their symbols) across categories to represent composite concepts.</li>
+</ol>
+<p>Concepts might be anything, but we tend to assign symbols to more primitive (non-composite) concepts. Let's take the English language for example:
+<ul>
+<li><b>Assigning symbols (words) to particular concepts</b> - in categories like verb, noun, etc. Sometimes these are not primitive, and are made by using a composition rule (Ex. using a verb, adding "-er" suffix to get a noun).</li>
+<li><b>Composing words into sentences</b> - We compose these symbols sequentially to represent and communicate composite concepts that make use of the composed concepts in a way defined by grammar.</li>
+<li><b>Composing morphemes into words</b> - We take things like prefixes, suffixes, latin or greek roots, and string them together to combine their effects on the meaning being communicated. </li>
+<li><b>Composing letters into morphemes</b> -  Primitive concepts are given their representation in written English by sequentially composing alphabetical primitives (letters), each letter representing a small category of sounds with rules for which sound gets expressed based on letters in the surrounding locality. </li>
+</ul>
+As a side note, this kind of exposes a problem that different languages handle differently, the number of primitive concepts is much greater than the number of phonemes that humans can distinguish. Languages get to choose the number of symbols in their alphabet, and their relations to sound and concept. A language like Chinese has many unique written symbols, they go with the "a symbol for every concept" kind of philosophy. On the other extreme, there's English which goes down to the "a symbol for every sound" philosophy (then keeps going a bit) with a very minimal set of unique symbols each with a fairly simple set of rules that imply how its compositions are spoken. 
+</p>
+<p>
+The symbols we assign are always a physical thing. For written communication, it's about a pattern in the light entering the eye (a visual symbol), but certain patterns of sound may also serve as a symbol for something (like the shake of a bag of treats to a cat). Abstractly, for any type of sense (way of detecting information), you could have patterns of sense that form a symbol (which may not be conceptually primitive, but are symbolic of some concept), of course, to anyone who knows about braille or morse code, this wouldn't come as a surprise.
+</p>
+<p>So we've arrived at the conclusion, that a <b>symbol is an assigned physical representation of something conceptual</b> (which might as well be taken to mean "not physical"). It's something we can produce, interpret, and maybe even present to other interpreters (basically people who know the association between symbol and concept) to implement communication. </p>
+<h2>How Does This Relate to Computers?</h2>
+<p>You've probably heard something like "binary is the language of computers", well yeah, on a computer, all information gets represented in binary. All computation on all chips is happening using binary (on a physical level). Binary numbers are the physical symbols that are used and composed to represent all manners of concept.</p>
+<p>You can probably imagine that electronics involves a lot of voltages along a lot of wires, and maybe you can also imagine that it's easier to make sure a wire does or does not have voltage than it might be to dampen or enhance the voltage at will (the difference between a switch and some kind of variable resistor), let alone the issue of keeping a voltage at a good level over time (without destruction of information) when you've got physical limitation on your device like electron tunnelling.</p>
+<p>Hence, because electronics makes it easy to talk about charges and voltages, and it's at least easy for a charge/voltage to be interpreted as (or made to be) high or low, we naturally arrive at the binary number system as the foundation of numerical computation when we interpret a high voltage/charge as a 1 and a low voltage as a 0 (or vice versa, depending on platform I suppose). We can interpret voltages over either space (like consecutive memory cells), or time (like transferring bits at a time over a wire), or some combination of the two as a way of representing numbers with more than one binary digit, and we come up with standards for how certain information (like the English alphabet) is to be translated into binary numbers.</p>
+<p>Is your head spinning yet? Here's what we've covered so far: <ul>
+<li>Layered Compositions of concepts (letters, morphemes, words, and sentences)</li>
+<li>Symbols - senses, patterns, and concepts</li>
+<li>Computers are really good at doing operations you'd expect to be easy on a binary number (like turning a 0 into a 1)</li>
+<li>We assign representation by standardizing how different categories of things get represented in binary</li>
+</ul>
+These things are important because they give you a better representation of the problem space we're dealing with, which is roughly about computers, the world, and the interaction between them. There are two more things I'm going to talk about here: <ul>
+  <li>Using binary in practice</li>
+  <li>COSMs</li>
+</ul>
+<h3>Using Binary In Practice</h3>
+<p>The whole idea of programming in a language like C or C++ is that you're talking in a procedural language that gets translated into something the processor was designed to execute, and often designed to execute well. Physical processors are designed to read instruction codes to decide what to compute or how to interface external memory (loading for computations, or exporting after computation), and they do it all using a small (fixed, in the physical case) amount of space that gets used in the algorithms. Results and parameters of computation get stored in fixed size "slots" (size measured as a number of bits in binary), so you must phrase your algorithms as occuring in a slot of this size (if you want the instructions to be easy to process). Because single bits aren't incredibly useful, these slots end up being some number of bytes (packs of 8 bits), which end up coming in powers of 2 to account for exponential growth of resources and efficient interopability in a system. C primitive types get "built into the code" in the sense that the instruction codes simply tell the processor to do an algorithm based on an assumed representation of the binary (different between signed, unsigned, or float types). Hence you see different assembly instructions for different kinds of addition, and other operations.</p>
+
+<p>
+A processor manages to work as a computational module by using its state for: <ol>
+<li>Having codes that load in binary values from memory</li>
+<li>Having codes that write out binary values from memory</li>
+<li>Having codes that do operations across its slots (registers)</li>
+</ol>
+So there's machine code thats stored somewhere in memory, when your processor first gets power its usually setup to look at a predefined location in memory, which might contain your OS boot instructions which ultimately run your OS and provide an interface for running more binaries (with additional machine code) that define more applications. There's generally a way that assembly code (for a particular CPU architecture) gets packed into machine code instructions of a fixed-number of bits, and every assembly code takes a certain number of clock cycles to execute as it translates right into a physical process undergone by the processor.</p>
+<p> In assembly, things are made to look like functions, or something with parameters, but all of these parameters must be able to be represented in a specific format with a strict number of bits, and get baked into machine instructions for execution. Instructions either identify registers (a "slot" for a value, used as either a destination or parameter for computation), or use a number with a very specific number of bits. Since anytime you have more than a few bits in a number, there are few enough registers that one can be identified with less bits (than it would take to actually pass a number). There are many issues with instructions that embed numberic parameters<ul>
+<li>Unless if you dynamically change/generate the code at execution, the values must be fixed at compile time.</li>
+<li>How do you ensure you don't use a number that needs too many bits to be embedded correctly into the instruction?</li>
+</ul>
+The design of SEMAK makes use of abstractions of principles in how processors and operating systems work, and there are similarities and differences.</p>
+<p>
+Some similarities:<ul>
+<li>Like an operating system, we provide access to underlying functionality so that the system can be extended. </li>
+<li>Like a processor, we expose an interface for running internally understood command sequences to modify our system, and do our best to make sure our instruction set is awesome (in terms of speed and functionality to size).</li>
+</ul>
+Some differences: <ul>
+<li>Unlike a processor, our system can distribute its internals across memory and file storage (like an operating system).</li>
+<li>Unlike an operating system, there's less focus on human computer interaction, and more focus on a theoretically optimal inter-storage monolith that can serve as the foundation of a system that can evolve into anything (with respect to resources), and scale up (in terms of system data and functional responsibility) efficiently.</li>
+</ul>
+<h3>Command Oriented State Machines</h3>
+You go to write a C++ class, maybe it's something like a Number type, and you write methods with declarations like "void operator+=(Number x);". It's a fine way of doing things in a language like C++, especially when the operations are simple and are able to be inlined so the parametered function calls get compiled away. But what if you want this to be used in a dynamic context (at a point where type information has been compiled into program code)? There must be some kind of execution method, and it must make reference to the operations of the Number type specifically (unless you use virtual methods), what should this look like?</p>
+<p>Parameters are a huge pain in a dynamic context, there's going to be a lot of casting of memory, and loading, and time spent dealing with alignment issues. Luckily we may get past this by writing a different structure (and it can make use of our other C++ structure), something like "struct NumberCOSM { Number arg[2]; ... }" with methods like "void NumberCOSM::Add() { arg[0] += arg[1]; }". Since all the operations on Number are binary, all functional methods of this structure can have the same signature (making it easy to make an array of methods and call them by index). Keep in mind that our structure just needs two Numbers worth of memory that get used in the calculation, for instance, our NumberCOSM could have used two pointers, and relied on something else to set the pointers to the right place, or we could have a stack somewhere and used the last two values on the stack for the calculation. Point is, <b>any superstructure providing an Add operation working on two implicit locations (accessible using information from within the superstructure) will do fine</b>, you could even have a stack and indices to decide which values in the stack to use as whichever operand.  The only question remaining is about setting the parameters and obtaining the result. 
+</p>
+<p> The idea of a COSM pretty much comes down to the point in bold above, you look for a superstructure where the answers are implied and ultimately calculated within the internal data. Your approach to setting internal values and obtaining results from the system is what changes depending on your needs. So you've written a COSM, there is some set of input methods (for "configuring" the system), and a set of output methods (for using results elsewhere). Consider a COSM that <b>fully implements</b> something, it doesn't need inputs, and it doesn't need outputs, and maybe only serves as an entry point into the system with a method like "void exec();". Now consider what the "good" way of implementing this COSM should look like. Ideally, you've got functional modules of COSMs with input and output methods, and our "complete" COSM handles the logic of linking outputs to inputs (of one system to another), and defining the initial configuration of the system.
+</p>
+<p>Now we can talk about the system as layers of COSMs handling independent tasks, and the logic that links them.<ul>
+<li>Categorical Processor Machine: (Categorical identifiers, memory) -> Object Memory <ul>
+  <li>Methods for formation of category definitions, switching of instruction modes, object creation</li>
+  <li>Takes identifiers for sub-categories when forming category definitions, takes memory the processor can use a category definition on (for instance to yield the memory location of a sub-object). Note this can become a closed end when you pass results to the primitive computation machine or the execution machine.</li>
+</ul></li>
+<li>Categorical Storage Machine: (Categorical identifiers) -> Category Information<ul>
+  <li>Methods for traversing and modifying categorical information and hierarchy</li>
+  <li>Takes identification (maybe right from the categorical processor), gives you a category definition (probably sent right to the categorical processor)</li>
+</ul></li>
+<li>Execution Machine: (code streams) -> void<ul>
+  <li>No dynamically interfaced methods - this handles dynamically interfacing other COSMs methods</li>
+  <li>Takes two code streams as input - setup code and infinite loop code. Loop code simply loops forever (implement some kind of read-evaluate-respond loop here).</li>
+</ul></li>
+<li>Primitive Computation Machine: (Memory, Primitve Type Code) -> (8-byte Primitive)<ul>
+  <li>Exposes methods for doing arithmetic calculations, pointer access, other stuff we expect a processor to do.</li>
+  <li>Expands the value in input memory into uintptr_t sized version of primitive type (or double if float), and puts it in uintptr_t sized location on stack. Does computations using value sequences on the stack. Outputs uintptr_t representation of result of last item on stack.</li>
+</ul></li>
+</ul>
+Notice the categorical storage engine inputs and outputs are only reasonably linked to and from the categorical processor engine, this is a hint that it should probably be implemented as a component within the categorical processor (rather than something that gets linked at the same level as the processor). Now think about what kind of functionality should be implemented within this set of COSMs: <ul>
+  <li>An Instruction scheme and system for dynamically executing methods in any COSM (and at any level)</li>
+  <li>Assigning representation to memory - storage and manipulation of hierarchal ontological descriptions</li>
+  <li>Dynamic Computation - An efficient basis for executing dynamically specified computational algorithms.</li>
+</ul>
+You get access to all the things a processor can do dynamically with the execution and computation modules. In fact, we could implement our categorical stuff within the execution language and computation module, provided we have access to a basic source of memory. So why implement our categorical COSM in C++ instead of making it an addition defined in the SEMAK language? It has to do with the fact that the concept of a category, and categorical representation, encompasses much more than the concept of memory, so much more that memory can just be thought of as space where categorical and objective information can be stored, or also as something handled entirely (carefully and semi-implicitly) by the categorical processor. The essence of categorization and category definitions are to maximize the amount of information implicit in the structure itself, in doing so you'll see we save a lot of data and get a lot of capability in one place.
+</p>
+</body></html>
