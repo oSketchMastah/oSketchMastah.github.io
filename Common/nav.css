@@ -1,0 +1,80 @@
+:root {
+	--color-navbg: #8000ff;
+	--color-navtxt: #ffffff;
+	--color-activebg: #902000;
+	--color-activetxt: #ffffff;
+	--color-targetbg: #D04000;
+	--color-targettxt: #ffffff;
+	
+	--nav-total: 2;
+	--nav-height: calc(40px + 1.0vw);
+}
+
+.topnav {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: sticky;
+	top: 0;
+	left: 0;
+	background-color: var(--color-navbg);
+	width: 100%;
+	height: var(--nav-height);
+	z-index: 1;
+}
+
+.topnav .navClassCont * {
+	color: var(--color-navtxt);
+	border: solid 0.1vw black;
+	float: left;
+	height: var(--nav-height);
+	width: calc(100%/var(--nav-total));
+	margin: 0;
+	
+	vertical-align: middle;
+	padding-top: calc(var(--nav-height)/ 4);
+	padding-bottom: 1.5vh;
+	
+	text-align: center;
+	text-decoration: none;
+	font-size: var(--big-text);
+}
+
+.topnav .navClassCont:hover * {
+	color: var(--color-activetxt);
+	background-color: var(--color-activebg);
+}
+
+.topnav .navClassCont .dropTopNav {
+	display: none;
+	position: fixed;
+	background-color: var(--color-activebg);
+	height: auto;
+	top: var(--nav-height);
+	padding: 0;
+}
+
+.topnav .navClassCont .dropTopNav * {
+
+	border: solid 0.1vw;
+	border-color: var(--color-mbg);
+	display: none;
+	font-size: 2.3vw;
+	height: auto;
+	width: 100%;
+	overflow: hidden;
+	position: sticky;
+}
+.topnav .navClassCont a:hover {
+	color: var(--color-targettxt);
+	background-color: var(--color-targetbg);
+}
+
+.navClassCont:hover .dropTopNav {
+	display: block;
+}
+.topnav .navClassCont:hover .dropTopNav * {
+	display: block;
+}
+
+

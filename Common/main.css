@@ -1,0 +1,69 @@
+:root {
+	--color-mbg: #000000;
+	--color-mtxt: #008000;
+	--color-boxbg: #002869;
+	--color-boxtxt: #ffffff;
+	
+	--big-text: calc(10px + 0.7vw);
+	--little-text: calc(10px + 0.5vw);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: var(--color-mtxt);
+	background-color: var(--color-mbg);
+	font-family: "Courier New", monospace;
+	font-size: var(--little-text);
+	margin: 0;
+	padding: 0;
+}
+
+.main_title {
+	border: solid 0.4vh;
+	border-color: var(--color-mtxt);
+	background-color: var(--color-mbg);
+	color: var(--color-text);
+	font-size: var(--big-text);
+	padding: 10px; 
+}
+
+.Box {
+	margin: 10px;
+	padding: 7px;
+	background-color: var(--color-boxbg);
+	color: var(--color-boxtxt);
+	border: solid 0.4vh;
+	overflow-wrap: break-word;
+}
+
+table.staff {
+	width: 100%;
+}
+table.staff th, table.staff td {
+	border: 2px solid white;	
+}
+
+th, td {
+	padding: 6px;
+}
+table.staff tr {
+	height: 40vh;
+}
+table.staff td {
+	height: 40vh;
+	width: 50%;
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+}
+
+p.indent {
+	margin-left: 5vw;
+}
+
